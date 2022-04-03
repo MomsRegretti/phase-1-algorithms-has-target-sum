@@ -1,7 +1,22 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  let otp = []
+  for (let i=0; i<array.length; i++) {
+    let int = array[i]
+    let arr = [...array.splice(i,1)]
+    console.log(arr)
+    let ary = arr.map(element => element + int)
+    let ary1 = ary.filter(element => element === target)
+    if (ary1 !== []){
+      otp.push(ary1)
+    }
+  }
+  if(otp != []){
+    return true
+  }
+  else 
+  return false
 }
-
+console.log(hasTargetSum([3,3,3],6))
 /* 
   Write the Big O time complexity of your function here
 */
